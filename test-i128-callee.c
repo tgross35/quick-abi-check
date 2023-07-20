@@ -3,8 +3,8 @@
 ;
 
 void print_u128(__int128_t val) {
-    uint64_t upper = (uint64_t)(val >> 64);
-    uint64_t lower = (uint64_t)(val & 0xffffffffffffffff);
+    int64_t upper = (int64_t)(val >> 64);
+    int64_t lower = (int64_t)(val & 0xffffffffffffffff);
     printf("%#016lx%016lx", upper, lower);
 }
 
