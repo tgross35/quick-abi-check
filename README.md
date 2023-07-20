@@ -7,9 +7,10 @@ CLANG_NEW=path/to/built/clang ./build-run.sh
 ## Current output
 
 clang-new is built with the patch from <https://reviews.llvm.org/D86310>. Note
-how gcc and clang disagree on output for arg3+.
+how gcc and clang disagree on output for arg3+ on i128 (but f128 is fine).
 
 ```
+i128 outputs
 caller cc: gcc 11.3.0
 caller align i128 16
 caller arg0 244
@@ -125,4 +126,123 @@ callee arg2 0xf0e0d0c0b0a09080706050403020100
 callee arg3 0xf0e0d0c0b0a09080706050403020100
 callee arg4 0xf0e0d0c0b0a09080706050403020100
 callee arg15 123456.125000
+
+f128 outputs
+caller cc: gcc 11.3.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: gcc 11.3.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: gcc 11.3.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: clang 14.0.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: gcc 11.3.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: clang 14.0.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: clang 14.0.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: gcc 11.3.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: clang 14.0.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: clang 14.0.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: clang 14.0.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: clang 14.0.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: clang 14.0.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: gcc 11.3.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: clang 14.0.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: clang 14.0.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
+
+caller cc: clang 14.0.0
+caller align f128 16
+caller arg0 244
+caller argval 0000000c088392a7ffc02d40
+caller arg15 123456.125000
+callee cc: clang 14.0.0
+callee arg0 244
+callee arg1 0000000c088392a7ffc02d40
+callee arg2 0000000c088392a7ffc02d40
+callee arg3 0000000c088392a7ffc02d40
+callee arg4 0000000c088392a7ffc02d40
+callee arg15 123456.125000
 ```
+
