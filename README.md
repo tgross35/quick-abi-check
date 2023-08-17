@@ -29,7 +29,7 @@ callee arg4 0xf0e0d0c0b0a09080706050403020100
 callee arg15 123456.125000
 + ./bins/i128-caller-gcc-callee-clang-old
 caller cc: gcc 11.4.0
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+callee cc: clang 14.0.0
 caller align i128 16
 caller arg0 244
 caller argval 0xf0e0d0c0b0a09080706050403020100
@@ -39,8 +39,8 @@ callee align i128 16
 callee arg0 244
 callee arg1 0xf0e0d0c0b0a09080706050403020100
 callee arg2 0xf0e0d0c0b0a09080706050403020100
-callee arg3 0xf0e0d0c0b0a09080706050403020100
-callee arg4 0xf0e0d0c0b0a09080706050403020100
+callee arg3 0x7060504030201000000000000000000
+callee arg4 0x7060504030201000f0e0d0c0b0a0908
 callee arg15 123456.125000
 + ./bins/i128-caller-gcc-callee-clang-new
 caller cc: gcc 11.4.0
@@ -73,7 +73,7 @@ callee arg3 0x0f0e0d0c0b0a09080706050403020100
 callee arg4 0x0f0e0d0c0b0a09080706050403020100
 callee arg15 123456.125
 + ./bins/i128-caller-clang-old-callee-gcc
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
 callee cc: gcc 11.4.0
 caller align i128 16
 caller arg0 244
@@ -84,12 +84,12 @@ callee align i128 16
 callee arg0 244
 callee arg1 0xf0e0d0c0b0a09080706050403020100
 callee arg2 0xf0e0d0c0b0a09080706050403020100
-callee arg3 0xf0e0d0c0b0a09080706050403020100
-callee arg4 0xf0e0d0c0b0a09080706050403020100
+callee arg3 0x7060504030201000f0e0d0c0b0a0908
+callee arg4 00000000000000000f0e0d0c0b0a0908
 callee arg15 123456.125000
 + ./bins/i128-caller-clang-old-callee-clang-old
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
+callee cc: clang 14.0.0
 caller align i128 16
 caller arg0 244
 caller argval 0xf0e0d0c0b0a09080706050403020100
@@ -103,7 +103,7 @@ callee arg3 0xf0e0d0c0b0a09080706050403020100
 callee arg4 0xf0e0d0c0b0a09080706050403020100
 callee arg15 123456.125000
 + ./bins/i128-caller-clang-old-callee-clang-new
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
 callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
 caller align i128 16
 caller arg0 244
@@ -114,11 +114,11 @@ callee align i128 16
 callee arg0 244
 callee arg1 0xf0e0d0c0b0a09080706050403020100
 callee arg2 0xf0e0d0c0b0a09080706050403020100
-callee arg3 0xf0e0d0c0b0a09080706050403020100
-callee arg4 0xf0e0d0c0b0a09080706050403020100
+callee arg3 0x7060504030201000f0e0d0c0b0a0908
+callee arg4 00000000000000000f0e0d0c0b0a0908
 callee arg15 123456.125000
 + ./bins/i128-caller-clang-old-callee-rustc
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
 caller rustc: version unspecified
 caller align i128 16
 caller arg0 244
@@ -129,8 +129,8 @@ callee align i128 16
 callee arg0 244
 callee arg1 0x0f0e0d0c0b0a09080706050403020100
 callee arg2 0x0f0e0d0c0b0a09080706050403020100
-callee arg3 0x0f0e0d0c0b0a09080706050403020100
-callee arg4 0x0f0e0d0c0b0a09080706050403020100
+callee arg3 0x07060504030201000f0e0d0c0b0a0908
+callee arg4 0x00000000000000010f0e0d0c0b0a0908
 callee arg15 123456.125
 + ./bins/i128-caller-clang-new-callee-gcc
 caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
@@ -149,7 +149,7 @@ callee arg4 0xf0e0d0c0b0a09080706050403020100
 callee arg15 123456.125000
 + ./bins/i128-caller-clang-new-callee-clang-old
 caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+callee cc: clang 14.0.0
 caller align i128 16
 caller arg0 244
 caller argval 0xf0e0d0c0b0a09080706050403020100
@@ -159,8 +159,8 @@ callee align i128 16
 callee arg0 244
 callee arg1 0xf0e0d0c0b0a09080706050403020100
 callee arg2 0xf0e0d0c0b0a09080706050403020100
-callee arg3 0xf0e0d0c0b0a09080706050403020100
-callee arg4 0xf0e0d0c0b0a09080706050403020100
+callee arg3 0x7060504030201000706050403020100
+callee arg4 0x7060504030201000f0e0d0c0b0a0908
 callee arg15 123456.125000
 + ./bins/i128-caller-clang-new-callee-clang-new
 caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
@@ -223,7 +223,7 @@ callee arg4 0xf0e0d0c0b0a09080706050403020100
 callee arg15 123456.125000
 + ./bins/i128-caller-rustc-callee-clang-old
 caller rustc: version unspecified
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+callee cc: clang 14.0.0
 caller align i128 16
 caller arg0 244
 caller argval 0x0f0e0d0c0b0a09080706050403020100
@@ -232,8 +232,8 @@ callee align i128 16
 callee arg0 244
 callee arg1 0xf0e0d0c0b0a09080706050403020100
 callee arg2 0xf0e0d0c0b0a09080706050403020100
-callee arg3 0xf0e0d0c0b0a09080706050403020100
-callee arg4 0xf0e0d0c0b0a09080706050403020100
+callee arg3 0x7060504030201000706050403020100
+callee arg4 0x7060504030201000f0e0d0c0b0a0908
 callee arg15 123456.125000
 + ./bins/i128-caller-rustc-callee-clang-new
 caller rustc: version unspecified
@@ -281,7 +281,7 @@ callee arg4 0000000c088392a7ffc02d40
 callee arg15 123456.125000
 + ./bins/f128-caller-gcc-callee-clang-old
 caller cc: gcc 11.4.0
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+callee cc: clang 14.0.0
 caller align f128 16
 caller arg0 244
 caller argval 0000000c088392a7ffc02d40
@@ -306,7 +306,7 @@ callee arg3 0000000c088392a7ffc02d40
 callee arg4 0000000c088392a7ffc02d40
 callee arg15 123456.125000
 + ./bins/f128-caller-clang-old-callee-gcc
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
 callee cc: gcc 11.4.0
 caller align f128 16
 caller arg0 244
@@ -319,8 +319,8 @@ callee arg3 0000000c088392a7ffc02d40
 callee arg4 0000000c088392a7ffc02d40
 callee arg15 123456.125000
 + ./bins/f128-caller-clang-old-callee-clang-old
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
+callee cc: clang 14.0.0
 caller align f128 16
 caller arg0 244
 caller argval 0000000c088392a7ffc02d40
@@ -332,7 +332,7 @@ callee arg3 0000000c088392a7ffc02d40
 callee arg4 0000000c088392a7ffc02d40
 callee arg15 123456.125000
 + ./bins/f128-caller-clang-old-callee-clang-new
-caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+caller cc: clang 14.0.0
 callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
 caller align f128 16
 caller arg0 244
@@ -359,7 +359,7 @@ callee arg4 0000000c088392a7ffc02d40
 callee arg15 123456.125000
 + ./bins/f128-caller-clang-new-callee-clang-old
 caller cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
-callee cc: clang 18.0.0 (git@github.com:tgross35/llvm-project.git b9499189a2554e289250d1ef4fe96d068e3ed3bd)
+callee cc: clang 14.0.0
 caller align f128 16
 caller arg0 244
 caller argval 0000000c088392a7ffc02d40
@@ -389,8 +389,6 @@ callee arg15 123456.125000
 
 clang-new is built with the patch from <https://reviews.llvm.org/D86310>. Note
 how gcc and clang disagree on output for arg3+ on i128 (but f128 is fine).
-
-This output is the same as above.
 
 ```
 i128 outputs
