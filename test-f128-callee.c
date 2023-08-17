@@ -24,9 +24,8 @@ void test_callee(
     __float128 arg2,
     __float128 arg3,
     __float128 arg4,
-    float arg15
-) {
-    print_cc_version_callee();
+    float arg15)
+{
     printf("callee arg0 %d", arg0);
     printf("\ncallee arg1 ");
     print_f128(arg1);

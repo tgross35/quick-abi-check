@@ -24,7 +24,8 @@ void test_callee(
     __int128_t arg4,
     float arg15
 ) {
-    print_cc_version_callee();
+    printf("callee align i128 %lu\n", _Alignof(__int128_t));
+
     printf("callee arg0 %d", arg0);
     printf("\ncallee arg1 ");
     print_u128(arg1);
