@@ -7,7 +7,7 @@ set -eux
 run_f128=${SKIP_F128:-}
 clang_old="${CLANG_OLD:-clang}"
 clang_new="$CLANG_NEW"
-rustc="${RUSTC:-rustc}"
+rustc="$RUSTC"
 mkdir -p bins
 
 gcc test-i128-callee.c -fpic -c -o bins/i128-callee-gcc.a

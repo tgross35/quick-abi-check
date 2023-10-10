@@ -1,13 +1,13 @@
 Compare i128 caller/calle ABIs
 
 ```
-CLANG_NEW=path/to/built/clang RUST=path/to/built/rust ./build-run.sh 
+CLANG_NEW=path/to/built/clang RUSTC=path/to/built/rust ./build-run.sh
 ```
 
 ## Output with D86310 and D158169
 
 Both rusc and clang-new is built with <https://reviews.llvm.org/D86310> and
-<https:// reviews.llvm.org/D158169>, Note how gcc and old clang disagree on
+<https://reviews.llvm.org/D158169>, Note how gcc and old clang disagree on
 output for arg3+ on i128 (but f128 is fine), but gcc and new clang always agree.
 
 ```
